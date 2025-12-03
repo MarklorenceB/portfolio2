@@ -10,7 +10,7 @@ import {
   User,
 } from "lucide-react";
 
-import profileImageUrl from "./assets/zelyn.png"; // Replace with actual image path
+import profileImageUrl from "/zelyn.png";
 
 const Portfolio = () => {
   const [scrollY, setScrollY] = useState(0);
