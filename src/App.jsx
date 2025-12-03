@@ -7,11 +7,17 @@ import {
   GraduationCap,
   Award,
   ChevronDown,
+  User,
 } from "lucide-react";
+
+import profileImageUrl from "./assets/zelyn.png"; // Replace with actual image path
 
 const Portfolio = () => {
   const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState("hero");
+  const [imageError, setImageError] = useState(false);
+
+  // Replace this URL with Hazelyn's actual photo URL
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -113,12 +119,27 @@ const Portfolio = () => {
 
         <div className="relative z-10 text-center max-w-4xl mx-auto">
           <div className="mb-8 inline-block">
-            <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white text-5xl font-bold shadow-2xl mx-auto animate-float">
-              HC
+            {/* Profile Image Container */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity animate-pulse"></div>
+              <div className="relative w-48 h-48 mx-auto">
+                {!imageError ? (
+                  <img
+                    src={profileImageUrl}
+                    alt="Hazelyn A. Cuenca"
+                    className="w-full h-full rounded-full object-cover border-4 border-white shadow-2xl animate-float"
+                    onError={() => setImageError(true)}
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white shadow-2xl animate-float">
+                    <User size={80} />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-fade-in">
+          <h1 className="text-[35px] md:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-fade-in ">
             Hazelyn A. Cuenca
           </h1>
 
