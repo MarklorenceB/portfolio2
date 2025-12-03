@@ -153,7 +153,6 @@ const Portfolio = () => {
             administrative support. Committed to excellence and integrity in
             financial management.
           </p>
-
           <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-delay-3">
             <a
               href="mailto:hazelyncuenca21@gmail.com"
